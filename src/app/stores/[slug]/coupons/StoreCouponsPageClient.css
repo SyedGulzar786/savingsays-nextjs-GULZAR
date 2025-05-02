@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Purple+Purse&display=swap");
+
+/* typography started*/
+.four-fifteen {
+  font-family: Poppins !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+}
+
+.four-thirteen {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.four-twelve {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 12px;
+}
+.four-eleveen {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.six-thirteen {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.six-sixteen {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.six-fifteen {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.six-fiftynine {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 59px;
+}
+
+.five-seventeen {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 17px;
+}
+.five-eighteen {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.seven-fourty {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.seven-twenty-eight {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.five-fourty {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.four-eighteen {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 18px;
+}
+.four-sixteen {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.six-twentytwo {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 22px;
+}
+.six-twenty {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.seven-sixty {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.color-primary {
+  color: #1c1c1c;
+}
+
+.color-secondary {
+  color: #4a4a4a;
+}
+
+.color-tertiary {
+  color: #bfbfbf;
+}
+
+.color-tetra {
+  color: #666666;
+}
+
+.color-penta {
+  color: #8c3c20;
+}
+
+.color-hexa {
+  color: #ffffff;
+}
+
+.color-octa {
+  color: #667085;
+}
+
+/* typography ended*/
+
+.nav-color {
+  background: #fff9ee !important;
+}
+.dropdown-icon {
+  width: 14px;
+  height: 24px;
+}
+.sec-nav-sec {
+  width: 70%;
+}
+
+.third-nav-sec {
+  width: 40%;
+}
+
+button#Dropdown {
+  border: none;
+  background: transparent;
+}
+
+button.btn.btn-link.d-flex.align-items-center.p-0.custom-design {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+/* main logo starts */
+.web-logo {
+  width: 210px;
+  height: 51px;
+}
+
+/* search nav */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 5px 1rem;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-container img {
+  width: 17px;
+  height: 17px;
+}
+
+.search-container input {
+  margin-left: 0.5rem;
+  border: none;
+  outline: none;
+  color: #9ca3af;
+  background-color: transparent;
+}
+
+.search-container input::placeholder {
+  color: #9ca3af;
+}
+/* ***************** */
+.upper-section-img {
+  padding: 65px 12px;
+  width: 221px !important;
+}
+/* ***************** */
+.coupon-card {
+  background: #fff9ee;
+  border-radius: 10px;
+  padding: 13px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 295px;
+  height: 300px;
+}
+.top-badge {
+  background: rgba(250, 196, 82, 1);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.discount-btn {
+  background: linear-gradient(#ad2929, #e96535, #c94725);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  width: 180px;
+  height: 42px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.display-view-price {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.display-view-dicount {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.discount-section {
+  text-align: left;
+}
+.discount-section h3 {
+  margin-bottom: 0;
+}
+.discount-section p {
+  margin-top: -5px;
+  font-size: 1.2rem;
+}
+.line {
+  width: 100%;
+  border-top: 2px solid #d1d5db;
+}
+.discount-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.discount-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.retroid-img {
+  width: 94px !important;
+  height: 32px !important;
+}
+/* SIDEBAR */
+.sidebar {
+  background: #fff9ee;
+}
+.profile-card {
+  display: flex;
+  align-items: center;
+  /* background-color: #fff; */
+  /* padding: 20px; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+.profile-card img {
+  border-radius: 50%;
+  border: 3px solid #d9534f;
+  width: 80px;
+  height: 80px;
+  padding: 2px;
+  object-fit: cover;
+  margin-right: 15px; /* Decreased margin */
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+}
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  color: #777;
+}
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin-left: 20px;
+  flex-grow: 1;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+.btn-custom {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #bfbfbf;
+  border-radius: 25px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+}
+.bottom-line {
+  width: 100%;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+/* bottom-line-span */
+.bottom-line-span {
+  width: 20px !important;
+  height: 1px !important;
+  background: red;
+}
+.load-more {
+  background: #fdefeb;
+}
+/* banila-section */
+.beauty img {
+  border: 1px solid #bfbfbf;
+}
+/* ********* */
+.dark-color {
+  color: #0d0d0d;
+}
+/* acoridan-start */
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+  /* transition: all 0.5s; */
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+}
+
+/* .accordion-button::after {
+  transition: all 0.5s;
+} */
+
+.accordion-width {
+  max-width: 886px !important;
+}
+/* acoridan-end */
+.review-stars img{
+    width: 25px;
+    height: 25px;
+}
+ /* ****** */
+ .name {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+  }
+  .title {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px !important;
+    color: #666666;
+    border-top: 1px solid #ebebeb;
+  }
+  .updated-text {
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #575757;
+  }
+  .description {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 120% !important;
+    letter-spacing: 0% !important;
+    color: #757575;
+  }
+
+  @media (max-width: 480px) {
+  
+    .name {
+      font-size: 16px;
+    }
+    .title {
+      font-size: 13px;
+    }
+    .updated-text,
+    .description {
+      font-size: 13px;
+    }
+  }
+  .pic-border{
+    border: 2px solid #C9452E;
+    padding: 2px;
+  }
+  /* ********** */

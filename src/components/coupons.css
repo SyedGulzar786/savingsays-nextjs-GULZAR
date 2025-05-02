@@ -1,0 +1,6 @@
+.coupon-card .title {
+    word-wrap: break-word;
+    display: inline;
+    font-size: 18px;
+    font-weight: 600;
+}

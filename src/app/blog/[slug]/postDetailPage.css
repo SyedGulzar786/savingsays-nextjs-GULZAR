@@ -1,0 +1,104 @@
+.main-span {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem !important;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #575757;
+  }
+  .main-content h2 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 2.063 !important;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #000000;
+  }
+  .main-content h6 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.125rem !important;
+    line-height: 163%;
+    letter-spacing: 0%;
+    color: #000000;
+  }
+  .main-content p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem !important;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #575757;
+  }
+  /* sidebar start */
+  .side-heading {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.125rem   ;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #000000;
+  }
+  .Beauty-card {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  .Beauty-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .Beauty-card-content {
+    padding: 20px;
+    text-align: center;
+  }
+  .top-div {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #fac452;
+    border-radius: 20px;
+    padding: 6px 8px;
+  }
+  .top-div span {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 0.813rem !important;
+    line-height: 120%;
+    color: #0d0d0d;
+  }
+  .self-care-box {
+    font-family: Poppins !important;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .self-care-box p {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1rem !important;
+    line-height: 120%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+  }
+  
+  .right-up {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  
+  .innerblog-main-img {
+    width: 100% !important;
+height: 624px  !important;
+  }
+  .b-inner-sbar-img{
+
+    width: 100%;
+    height: 203px !important;
+    /* border-radius: 40px; */
+  }

@@ -1,0 +1,77 @@
+/* first section */
+.first-coupon-section{
+    background-image: url(/assets/discount-page/Mobile-Widget-No-Mountain-Van--e1602621353961\ 1.svg);
+}
+
+.linear-bg{
+    /* height: inherit; */
+    /* height: 304px; */
+    background: linear-gradient(89.73deg, #FBCE6F 25.72%, rgba(251, 206, 111, 0) 86.93%);
+}
+
+.line-height{
+    line-height: 55px;
+}
+
+.bottom-line-2{
+    border: 1px solid #666666;
+    width: 100%;
+}
+
+
+
+/* tip by author */
+.tip{
+    background: #E66234;
+}
+
+/* coupon */
+.discount-coupon{
+    border: 1px solid #BFBFBF
+}
+.gradient-font{
+    background: linear-gradient(180deg, #AD2929 -9.52%, #E96535 54.82%, #C94725 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.badge-bg{
+    background-color: #fbbf24;
+    color: black;
+}
+.badge-bg-2{
+    background: #FDE7B8;
+    color: black;
+}
+
+/* avatar-img | sidebar */
+.avatar-img{
+border: 4px solid #C9452E;
+border-radius: 50%;
+width: 160px;
+height: 160px;
+}
+
+/* footer additional div a*/
+.footer-last {
+    background-color: #e65a2e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+  }
+
+.sidebar-btn{
+    border: 1px solid #BFBFBF
+}
+.sidebar-btn:hover{
+    border: 2px solid #E66234;
+    box-shadow: 0px 1px 4px 0px #00000026;
+}
+.photogenic{
+    box-shadow: 0px 4px 3px 0px #0000000D;
+}

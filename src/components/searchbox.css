@@ -1,0 +1,29 @@
+/* components/CustomSearch.css */
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}

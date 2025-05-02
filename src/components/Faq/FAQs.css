@@ -1,0 +1,25 @@
+.faq-section {
+
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .faq-item {
+    background-color: #fff;
+    border-radius: 5px;
+    transition: box-shadow 0.2s;
+  }
+  
+  .faq-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-question {
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    margin-top: 10px;
+    color: #555;
+  }
+  

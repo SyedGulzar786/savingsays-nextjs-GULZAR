@@ -1,0 +1,40 @@
+{
+  "name": "couponmist",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@availity/block-ui": "^1.1.5",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^2.5.0",
+    "bootstrap": "^5.3.3",
+    "date-fns": "^4.1.0",
+    "flag-icon-css": "^4.1.7",
+    "font-awesome": "^4.7.0",
+    "jose": "^5.9.6",
+    "keen-slider": "^6.8.6",
+    "lucide-react": "^0.503.0",
+    "next": "^15.0.3",
+    "nextjs-toploader": "^3.7.15",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.6",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-redux": "^9.2.0",
+    "react-simple-star-rating": "^5.1.7",
+
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.14.5",
+
+    "swiper": "^11.2.1"
+  }
+}
