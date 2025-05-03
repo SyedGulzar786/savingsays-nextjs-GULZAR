@@ -1,46 +1,108 @@
-"use client";
+"use client"
 
+import React, { useState } from 'react'
+import Coupons from "@/src/components/Coupons";
+import Sidebar from "@/src/components/TwoColumn/SideBar/Sidebar";
+import StorePageFoldOne from "@/src/components/FoldOne/StorePageFoldOne";
+import ContactUsReport from "@/src/components/TwoColumn/RightContent/ContactUsReport";
+import FAQs from "@/src/components/Faq/FAQs";
+import PopularCategories from "@/src/components/PopularCategories/PopularCategories";
+import PopularStores from "@/src/components/PopularStores/PopularStores";
+import { useVendorContext } from "@/src/app/vendor-provider";
 import Header from "@/src/components/Header/Header";
-import Footer from "@/src/components/Footer/Footer";
-import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import { GetStoreCoupons } from "@/src/actions/CouponsAction";
-import { Button } from "react-bootstrap";
-import { GetStores } from "@/src/actions/StoresAction";
-import Link from "next/link";
+import { GetStoreCoupons, SubmitCoupon } from "@/src/actions/CouponsAction";
 import Image from "next/image";
-import "./StoreCouponsPageClient.css";
+import Link from 'next/link';
+import CouponCard from "@/src/components/CouponCard";
+import "./StoreCouponsPageClient.css";  
 
-const PopularCategories = dynamic(
-  () => import("@/src/components/PopularCategories/PopularCategories"),
-  { ssr: false }
-);
-const PopularStores = dynamic(
-  () => import("@/src/components/PopularStores/PopularStores"),
-  { ssr: false }
-);
 
-export default function StorePage({ initialStores, alphabet }) {
-  const [stores, setStores] = useState(initialStores);
-  const [hasMoreStores, setHasMoreStores] = useState(true);
+export default function StoreCouponsPageClient({ store, initialCoupons }) {
+
+  const { vendorData } = useVendorContext();
+  const [coupons, setCoupons] = useState(initialCoupons)
+  const [hasMoreCoupons, setHasMoreCoupons] = useState(true);
   const [currentPage, setCurrentPage] = useState(2);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
-  const loadMoreStores = async () => {
-    if (hasMoreStores) {
+  const loadMoreCoupons = async () => {
+    if (hasMoreCoupons) {
       setLoading(true);
-      const data = await GetStores(currentPage, alphabet);
+      const data = await GetStoreCoupons(store?.slug, currentPage);
 
       if (data?.meta?.last_page === currentPage) {
-        setHasMoreStores(false);
+        setHasMoreCoupons(false);
       }
 
-      setStores((prevStores) => [...prevStores, ...data?.data]);
+      setCoupons((prevCoupons) => [...prevCoupons, ...data?.data]);
       setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
-      setLoading(false);
+      setLoading(false)
     }
+  }
+  const date = new Date();
+
+  // Get day, month name, and year
+  const day = date.getDate();
+  const monthName = date.toLocaleString("default", { month: "long" });
+  const year = date.getFullYear();
+
+  // Combine them
+  const formattedDate = `${monthName} ${day}, ${year}`;
+
+  console.log(store);
+
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [offerType, setOfferType] = useState('deal');
+  const [code, setCode] = useState(null);
+  const [affiliateUrl, setAffiliateUrl] = useState(null);
+  const [expiryDate, setExpiryDate] = useState(null);
+  const [offerTitle, setOfferTitle] = useState(null);
+
+
+  const handleOfferTypeChange = (e) => {
+    setOfferType(e.target.value);
   };
 
+  const resetForm = (form) => {
+    form.reset();
+    setOfferTitle(null);
+    setOfferType('deal');
+    setCode(null);
+    setExpiryDate(null);
+    setAffiliateUrl(null);
+  };
+
+  const handleSubmitCoupon = async (e) => {
+    e.preventDefault();
+
+    setCouponLoading(true);
+
+    await SubmitCoupon({
+      storeSlug: store?.slug,
+      offerType,
+      code,
+      affiliateUrl,
+      expiryDate,
+      offerTitle,
+    })
+      .then((response) => {
+        if (response.error === 1) {
+          ShowError(response.message);
+          setCouponLoading(false);
+          return;
+        }
+
+        ShowOk("Your coupon has been submitted");
+        resetForm(e.target);
+        setCouponLoading(false);
+      });
+  };
+
+  const latestCoupon = initialCoupons[0]?.title;
+
+
+  const authorData = store?.author;
+  console.log({authorData})
   return (
     <>
     <Header />
@@ -56,12 +118,14 @@ export default function StorePage({ initialStores, alphabet }) {
                         <img
                           alt="Banila Co logo"
                           className="rounded-4 upper-section-img  border border-secondary me-4"
-                          src="/assets/store-images/banila-co-brand-banner 1.png"
+                          src={store?.media?.thumb ?? 'https://upload.wikimedia.org/wikipedia/commons/0/0a/No-image-available.png'}
+                          srcSet={store?.media?.srcSet}
+                          
                         />
                       </div>
                       <div className="col-lg-9 col-sm-12 ms-0 ">
                         <h2 className="fw-bold ">
-                          Banila Co (Coupon &amp; Promo Code)
+                        {store.name} (Coupon &amp; Promo Code)
                         </h2>
                         <p className="text-muted mb-2 four-seventeen">
                           Best offers – Last Validated: March 8, 2025
@@ -240,7 +304,9 @@ export default function StorePage({ initialStores, alphabet }) {
                     </div>
                   </div>
                 </div>
+             
               </div>
+              
               <div className="row">
                 <div className="col-sm-4 col-md-4 mb-5">
                   <div className="d-flex justify-content-center align-items-center bg-light rounded-5">
@@ -540,6 +606,7 @@ export default function StorePage({ initialStores, alphabet }) {
                   Load More
                 </button>
               </div>
+              <CouponCard/>
               <section className="competiter mt-5">
                 <div className="row">
                   <h2 className="seven-fourty text-center">
@@ -780,6 +847,7 @@ export default function StorePage({ initialStores, alphabet }) {
                   </p>
                 </div>
               </section>
+           
             </div>
             {/* <!-- ***** --> */}
 
@@ -817,43 +885,36 @@ export default function StorePage({ initialStores, alphabet }) {
                  <div className="border rounded-4 px-2 shadow mb-3">
                  <div className="d-flex align-items-center gap-3 mb-2 mt-4">
                     <img
-                      src="/assets/store-images/Photo by George Milton.png"
+                      src={authorData?.avatar}
                       alt="Portrait of Emily Jones, a woman with dark hair and a serious expression, wearing a white top"
                       className="rounded-circle pic-border"
-                      width={60}
-                      height={60}
+                      width={56}
+                      height={56}
                       style={{ objectFit: "cover" }}
                     />
                     <div className="flex-grow-1">
-                      <a href="" className="text-decoration-none"><h1 className="name">Emily Jones</h1></a>
-                      <p className="title mb-0">Shopping & Savings Expert</p>
+                      <a href={`/authors/${authorData?.slug}`} className="text-decoration-none"><h1 className="name">{authorData?.name}</h1></a>
+                      <p className="title mb-0">{authorData?.tagline}</p>
                     </div>
                   </div>
                   {/* <!-- ***** --> */}
 
                   <p className="updated-text">
-                    <em>This page was updated 9 hours ago by Emily Jones</em>.
+                    <em>This page was updated 9 hours ago by {authorData.name}</em>.
                   </p>
-                  <p className="description">
-                    Emily is fervently committed to assisting our clientele in
-                    maximizing savings while enjoying a seamless online shopping
-                    experience. With a refined understanding of retail dynamics
-                    and an astute eye for identifying exceptional deals, she
-                    excels in sourcing the most advantageous offers. Outside her
-                    professional role in couponing, Kate finds joy in
-                    cultivating her garden, delving into mystery novels, and
-                    practicing yoga.
+                  <p className="description"
+                    dangerouslySetInnerHTML={{ __html: authorData.description }}
+                  >
                   </p>
                  </div>
 
                   <div className="status-box border rounded-4 px-2 pt-3">
                     <h2 className="six-thirteen">
-                      <i className="fas fa-sync-alt"></i> Last Updated: March
-                      10, 2025
+                      <i className="fas fa-sync-alt"></i> Last Updated: <strong>{formattedDate}</strong>
                     </h2>
                     <ul className="p-0 four-thirteen ms-3">
-                      <li className="mb-2">160 Offers Available</li>
-                      <li className="mb-2">47 Coupons Verified</li>
+                      <li className="mb-2">{store?.stats?.couponsCount} Offers Available</li>
+                      <li className="mb-2">{store?.stats?.storeWideDeals} Coupons Verified</li>
                       <li>885 People Used Today</li>
                     </ul>
                   </div>
@@ -884,15 +945,15 @@ export default function StorePage({ initialStores, alphabet }) {
                   <div className="joann-store">
                     <div className="d-flex mt-4 mb-2">
                       <h1 className="five-eighteen m-0">
-                        All you need to know about Joann
+                        All you need to know about {store?.name}
                       </h1>
                       {/* <!-- <div className="bottom-line ms-3 mb-1"></div> --> */}
                     </div>
                     <h6>
-                      <b>Joann Store</b>
+                      <b>{store.name}</b>
                     </h6>
                     <p className="four-thirteen mt-2 lh-sm">
-                      Joann was founded in 1943 and after that Joann established
+                      {store.name} was founded in 1943 and after that Joann established
                       the business direction towards Home & Garden. The category
                       of Joann products and services falls into Hobbies &
                       Collectibles, Art, Gift & Flowers, Gifts, Home & Living,
@@ -913,7 +974,7 @@ export default function StorePage({ initialStores, alphabet }) {
         </div>
       </section>
       {/* <!-- acordian-start --> */}
-    {/* <section className="accordion-custom spacer">
+    <section className="accordion-custom spacer">
         <div className="container accordion-width py-5">
             <h2 className="seven-fourty text-center mb-5 mt-5">Frequently Asked Questions</h2>
             <div className="accordion" id="accordionExample">
@@ -992,7 +1053,7 @@ export default function StorePage({ initialStores, alphabet }) {
                 </div>
             </div>
         </div>
-    </section> */}
+    </section>
     {/* <!-- acordian-end --> */}
     </>
   );
